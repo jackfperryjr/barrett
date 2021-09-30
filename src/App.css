@@ -188,9 +188,9 @@ footer {
     /* color: #fff; */
   }
   .font-lobster {
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    left: 48%;
+    left: 48%; */
     font-family: 'Lobster', cursive;
     font-size: 30px; 
     color: #000;
@@ -246,9 +246,11 @@ footer {
     z-index: 4000;
     /* border-bottom: 1px solid #37474F;*/ /* mobile */
   }
-  .navbar span .font-lobster {
-    margin: 0 auto;
+  .navbar span {
+    width: 100%;
+    text-align: center;
   }
+
   .profile-container {
     height: calc(200px + 6vmin);
   }

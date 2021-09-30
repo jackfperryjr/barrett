@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom'
 import { useAuth } from '../context/auth'
+import Navbar from '../components/Navbar'
 
 function Login(props) {
   const [isLoggedIn, setLoggedIn] = useState(false)
@@ -60,12 +61,14 @@ function Login(props) {
   }
 
   return (
+    <>
+    <Navbar />
     <div className='form-container login-screen'>
       <div className='overlay' style={{display: (overlay) ? 'block' : 'none'}}>
         <span className='loader text-primary'>Let me check Stack Overflow <i className="fab fa-stack-overflow"></i> ...</span>
       </div>
-      <p>Enter credentials</p>
-      <form>
+      <p className='text-center'>Enter credentials</p>
+      <form style={{maxWidth: '300px'}}>
         <div className='form-group'>
           <input type='text' className='form-control login-username' placeholder='enter username' value={username} onChange={e => { setUsername(e.target.value) }} />
         </div>
@@ -77,6 +80,7 @@ function Login(props) {
         <p className='btn btn-primary pointer' onClick={(e) => handleLogin(e)}>Login</p>
       </form>
     </div>
+    </>
     )
 }
 
