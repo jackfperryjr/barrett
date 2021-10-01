@@ -46,7 +46,7 @@ function Edit(props) {
       }).then(function(response) {
         if (response.status === 200) {
           setOverlay(false)
-          history.push('/blog/post/edit/' + id)
+          history.push('/post/edit/' + id)
         } else if (response.status === 401) {
           // setOverlay(false)
           // localStorage.clear()

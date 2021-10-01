@@ -26,10 +26,9 @@ function App(props) {
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Route exact path='/' component={blog} />
         <Route exact path='/login/' component={login} />
-        <Route exact path='/blog/' component={blog} />
-        <Route exact path='/blog/post/:id' component={blogPost} />
-        <PrivateRoute exact path='/blog/add/' component={add} />
-        <PrivateRoute exact path='/blog/post/edit/:id/' component={edit} />
+        <Route exact path='/post/:id' component={blogPost} />
+        <PrivateRoute exact path='/add/' component={add} />
+        <PrivateRoute exact path='/post/edit/:id/' component={edit} />
       </HashRouter>
     </AuthContext.Provider>
   )
