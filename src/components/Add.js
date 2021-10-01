@@ -20,7 +20,7 @@ function Add(props) {
       let payload = new FormData()
       payload.append('title', document.querySelector('[name="title"]').value)
       payload.append('content', document.querySelector('[name="content"]').value)
-      fetch('https://localhost:5001/api/v1/blogs/add', {
+      fetch('https://www.mooagleapi.com/api/v1/blogs/add', {
         method: 'post',
         headers: {
           'Authorization': 'Bearer ' + JSON.parse(localStorage.accessToken)
