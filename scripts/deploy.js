@@ -3,7 +3,6 @@ const fs = require("fs");
 
 (async () => {
   try {
-    await execa("git", ["branch", "-D", "gh-pages"]);
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
     console.log("Building...");
     await execa("npm", ["run", "build"]);
