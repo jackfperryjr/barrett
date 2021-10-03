@@ -47,14 +47,14 @@ function Blog(props) {
               (x =>
                 <div className='row row-blog' key={x.id}>
                   <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-                    <Link to={'blog/post/' + x.id}>{x.title}</Link>
+                    <Link to={'post/' + x.id}>{x.title}</Link>
                     <p className='blog-timestamp text-muted'>{moment(x.created).local().format('MMMM D, YYYY [at] h:mm a')}</p>
                     <div className='row text-muted flex-none'>
                       <span className='pointer blog-reaction float-right' onClick={e => { handleReactionUpdate(e, "love", x.id) }}><i className="far fa-heart"></i><span className='small blogs-reaction-count'>{(x.love > 1000 ? '1000s' : x.love)}</span></span>
                       <span className='pointer blog-reaction float-right' onClick={e => { handleReactionUpdate(e, "dislike", x.id) }}><i className="far fa-thumbs-down"></i><span className='small blogs-reaction-count'>{x.dislike}</span></span>
                       <span className='pointer blog-reaction float-right' onClick={e => { handleReactionUpdate(e, "like", x.id) }}><i className="far fa-thumbs-up"></i><span className='small blogs-reaction-count'>{x.like}</span></span>
                       {(localStorage.getItem('accessToken'))
-                      ? <Link to={'blog/post/edit/' + x.id} className='pointer blog-reaction' style={{marginLeft: '6px'}}><i className='fas fa-edit'></i></Link>
+                      ? <Link to={'post/edit/' + x.id} className='pointer blog-reaction' style={{marginLeft: '6px'}}><i className='fas fa-edit'></i></Link>
                       : <span></span>
                       }
                     </div>
